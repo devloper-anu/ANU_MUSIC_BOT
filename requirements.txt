@@ -1,9 +1,5 @@
-pyrogram-2.0.106
-tgcrypto
-yt-dlp
-ffmpeg
-pytgcalls-3.0.0.dev6
-tgcalls-3.0.0.dev2
+pytgealls>=0.0.3
+tgealls>=0.0.3
 
 
 
