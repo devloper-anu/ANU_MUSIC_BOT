@@ -1,5 +1,4 @@
 pytgcalls==3.0.0
-python-telegram-bot
-
+tgcalls==3.0.0
 
 
