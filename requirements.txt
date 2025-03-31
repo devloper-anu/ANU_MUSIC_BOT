@@ -2,5 +2,4 @@ pyrogram
 tgcrypto
 yt-dlp
 ffmpeg
-pytgcalls==0.0.24
-tgcalls==0.0.16
+pytgcalls
