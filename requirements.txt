@@ -1,9 +1,9 @@
-pyrogram==2.0.106
+pyrogram-2.0.106
 tgcrypto
 yt-dlp
 ffmpeg
-pytgcalls==3.0.0.dev6
-tgcalls==3.0.0.dev2
+pytgcalls-3.0.0.dev6
+tgcalls-3.0.0.dev2
 
 
 
