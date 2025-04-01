@@ -1,8 +1,8 @@
 import os
 
-TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-API_ID = os.getenv('API_ID')
-API_HASH = os.getenv('API_HASH')
+TELEGRAM_BOT_TOKEN = os.getenv('7380097256:AAGa0-J_aStZav0rpTK1L52fDmZZEKGTHkg')
+API_ID = os.getenv('23712299')
+API_HASH = os.getenv('9985ad1cd24a1030078b0b5a7cecf13b')
 
 import subprocess
 import logging
