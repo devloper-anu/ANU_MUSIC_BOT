@@ -1,31 +1,42 @@
+import asyncio
 import logging
-from telegram.ext import Application, CommandHandler
+from aiogram import Bot, Dispatcher, types
+from aiogram.types import Message
+from aiogram.utils import executor
+import os
 
-# Replace with your bot's token
-TELEGRAM_BOT_TOKEN = "7380097256:AAGa0-J_aStZav0rpTK1L52fDmZZEKGTHkg"
+# Logging setup
+logging.basicConfig(level=logging.INFO)
 
-# Logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                       level=logging.INFO)
-logger = logging.getLogger(__name__)
+# Environment Variables (Render pe set karna)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-# Define a command handler
-async def start(update, context):
-    await update.message.reply_text("Hello! I'm your bot.")
+# Ensure token exists
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable not set!")
 
+# Initialize bot and dispatcher
+bot = Bot(token=BOT_TOKEN)
+dp = Dispatcher(bot)
+
+# Start command
+@dp.message_handler(commands=['start'])
+async def start_command(message: Message):
+    await message.reply("🎵 Welcome to the Telegram Music Bot! Send a song name to search.")
+
+# Help command
+@dp.message_handler(commands=['help'])
+async def help_command(message: Message):
+    await message.reply("🎵 Use /start to begin and send a song name to search for music!")
+
+# Handle text messages
+@dp.message_handler(content_types=types.ContentType.TEXT)
+async def handle_music_request(message: Message):
+    await message.reply(f"🔍 Searching for: {message.text} (Feature Coming Soon!)")
+
+# Main function
 async def main():
-    application = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
-
-    # Add command handler
-    application.add_handler(CommandHandler("start", start))
-
-    import asyncio
-from telegram import Bot
-from telegram.ext import Application
-
-async def main():
-    application = Application.builder().token("YOUR_BOT_TOKEN").build()
-    await application.run_polling()
+    await dp.start_polling()
 
 if __name__ == "__main__":
     asyncio.run(main())
