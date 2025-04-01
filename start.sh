@@ -1,4 +1,19 @@
 #!/bin/bash
+
+# Remove existing virtual environment
+rm -rf .venv
+
+# Create a fresh virtual environment
+python -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Upgrade pip
 pip install --upgrade pip
-pip install pytgcalls>=0.0.3 python-telegram-bot
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the bot
 python bot.py
