@@ -1,4 +1,5 @@
-python-telegram-bot
-tgcalls==3.0.0.dev6
-
-
+aiogram
+python-dotenv
+yt-dlp
+pytube
+aiohttp
