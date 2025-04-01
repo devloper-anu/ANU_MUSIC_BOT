@@ -1,4 +1,4 @@
 python-telegram-bot
-pytgcalls==3.0.0.dev6
+tgcalls==3.0.0.dev6
 
 
