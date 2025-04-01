@@ -19,10 +19,13 @@ async def main():
     # Add command handler
     application.add_handler(CommandHandler("start", start))
 
-    # Run polling without asyncio.run
+    import asyncio
+from telegram import Bot
+from telegram.ext import Application
+
+async def main():
+    application = Application.builder().token("YOUR_BOT_TOKEN").build()
     await application.run_polling()
 
 if __name__ == "__main__":
-    # Start the bot
-    import asyncio
-    asyncio.get_event_loop().run_until_complete(main())
+    asyncio.run(main())
