@@ -1,9 +1,26 @@
-import asyncio
 import logging
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
-from aiogram.utils import executor
-import os
+from aiogram.filters import Command
+import asyncio
+
+API_TOKEN = '23712299'
+
+logging.basicConfig(level=logging.INFO)
+
+bot = Bot(token=API_TOKEN)
+dp = Dispatcher()
+
+@dp.message(Command("start"))
+async def cmd_start(message: Message):
+    await message.answer("Hello! I'm your music bot.")
+
+async def on_start():
+    await dp.start_polling(bot)
+
+if __name__ == '__main__':
+    asyncio.run(on_start())
+
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
