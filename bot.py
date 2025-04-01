@@ -2,7 +2,7 @@ import logging
 from telegram.ext import Application, CommandHandler
 
 # Replace with your bot's token
-TELEGRAM_BOT_TOKEN = "your_telegram_bot_token"
+TELEGRAM_BOT_TOKEN = "7380097256:AAGa0-J_aStZav0rpTK1L52fDmZZEKGTHkg"
 
 # Logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
