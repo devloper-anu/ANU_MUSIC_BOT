@@ -4,7 +4,7 @@ from aiogram.types import Message
 from aiogram.filters import Command
 import asyncio
 
-API_TOKEN = '23712299'
+API_TOKEN = '7808996327:AAG-gViuxnNhj3kiKQVLxDc7dGkSRH7oJjM'
 
 logging.basicConfig(level=logging.INFO)
 
